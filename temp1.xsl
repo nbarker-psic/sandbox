@@ -7,7 +7,7 @@
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="/Session.setDocumentRq/_tempSession/session/data/policy/line//risk[@deleted='1']//*[@id]">
+    <xsl:template match="/Session.setDocumentRq//session/data/policy/line//risk[@deleted='1']//*[@id]">
         <xsl:copy>
             <xsl:attribute name="deleted">1</xsl:attribute>
             <xsl:apply-templates select="@*|node()"/>
