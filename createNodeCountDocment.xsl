@@ -8,7 +8,7 @@
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="session">
+    <xsl:template match="session/*">
         <xsl:attribute name="test">1</xsl:attribute>
         <xsl:copy>
             <xsl:apply-templates select="@*|node()"/>
