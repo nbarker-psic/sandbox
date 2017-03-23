@@ -8,8 +8,8 @@
     </xsl:template>
 
     <xsl:template match="/Session.getDocumentRq//session/extension">
+        <nodeCounts/>
         <xsl:copy>
-            <nodeCounts/>
             <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
     </xsl:template>
