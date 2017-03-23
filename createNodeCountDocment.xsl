@@ -7,7 +7,7 @@
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="/Session.getDocumentRq//session/data/extension">
+    <xsl:template match="/Session.getDocumentRq//session/extension">
         <xsl:copy>
             <nodeCounts/>
             <xsl:apply-templates select="@*|node()"/>
