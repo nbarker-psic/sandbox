@@ -3,7 +3,7 @@
     <xsl:template match="/">
         <xsl:element name="Session.getDocumentRs">
             <xsl:attribute name="status">success</xsl:attribute>
-            <xsl:copy-of select="//line[@Type='LBI']" />
+            <xsl:copy-of select="//driver" />
         </xsl:element>
     </xsl:template>
 </xsl:stylesheet>
