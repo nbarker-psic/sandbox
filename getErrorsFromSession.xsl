@@ -5,11 +5,16 @@
     <xsl:template match="/">
         <Session.errorsAndWarningsRs>
             <warnings></warnings>
-            <errors></errors>
-<!--             <interest><xsl:value-of select="count(//session/data/account/additionalOtherInterest)"></xsl:value-of></interest>
-            <risk><xsl:value-of select="count(//session/data/policy/line/risk)"></xsl:value-of></risk>
-            <violation><xsl:value-of select="count(//session/data/policy/line/violation)"></xsl:value-of></violation>
-            <driver><xsl:value-of select="count(//session/data/policy/line/driver)"></xsl:value-of></driver> -->
+            <errors>
+                <xsl:for-each select="//session/messages/message">
+                    <error>
+                        <xsl:attribute name="type">
+                            <xsl:value-of select="@flag"></xsl:value-of>
+                        </xsl:attribute>
+                        <xsl:value-of select="."></xsl:value-of>
+                    </error>
+                </xsl:for-each>
+            </errors>
         </Session.errorsAndWarningsRs>
     </xsl:template>
 
