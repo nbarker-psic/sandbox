@@ -3,12 +3,14 @@
     <xsl:output omit-xml-declaration="yes"/>
 
     <xsl:template match="/">
-        <nodeCounts>
-            <interest><xsl:value-of select="count(//session/data/account/additionalOtherInterest)"></xsl:value-of></interest>
+        <sessionErrorsAndWarnings>
+            <warnings></warnings>
+            <errors></errors>
+<!--             <interest><xsl:value-of select="count(//session/data/account/additionalOtherInterest)"></xsl:value-of></interest>
             <risk><xsl:value-of select="count(//session/data/policy/line/risk)"></xsl:value-of></risk>
             <violation><xsl:value-of select="count(//session/data/policy/line/violation)"></xsl:value-of></violation>
-            <driver><xsl:value-of select="count(//session/data/policy/line/driver)"></xsl:value-of></driver>
-        </nodeCounts>
+            <driver><xsl:value-of select="count(//session/data/policy/line/driver)"></xsl:value-of></driver> -->
+        </sessionErrorsAndWarnings>
     </xsl:template>
 
 </xsl:stylesheet>
