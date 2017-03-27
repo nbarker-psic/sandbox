@@ -15,19 +15,13 @@
                     </error>
                 </xsl:for-each>
                 <!-- risk integrations -->
-                <xsl:for-each select="//session/policy/line/risk">
-                    <xsl:if test="boolean(./VinData/vinResponse/VinLookup.getVinLookupIndividualRs/VehicleData)">
+                <xsl:for-each select="//session/data/policy/line/risk">
+                    <xsl:if test="boolean(./VinData/vinResponse/VinLookup.getVinLookupIndividualRs/VehicleData) = false">
                         <error>
                             <xsl:attribute name="type">vinlookup</xsl:attribute>
                             <xsl:value-of select="concat('Unable to locate VIN: ', ./VIN)"></xsl:value-of>
                         </error>
                     </xsl:if>
-                    <error>
-                        <xsl:attribute name="type">
-                            <xsl:value-of select="@flag"></xsl:value-of>
-                        </xsl:attribute>
-                        <xsl:value-of select="."></xsl:value-of>
-                    </error>
                 </xsl:for-each>
             </errors>
         </Session.errorsAndWarningsRs>
