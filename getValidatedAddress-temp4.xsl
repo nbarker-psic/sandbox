@@ -6,6 +6,9 @@
         <Session.validatedAddress>
             <xsl:attribute name="count">
                 <xsl:value-of select="count(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow)"></xsl:value-of>
+                <AddressLine1>
+                    <xsl:value-of select="//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/AddressLine1"></xsl:value-of>
+                </AddressLine1>
             </xsl:attribute>
         </Session.validatedAddress>
     </xsl:template>
