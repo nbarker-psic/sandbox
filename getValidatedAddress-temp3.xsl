@@ -5,7 +5,7 @@
     <xsl:template match="/">
         <Session.validatedAddress>
             <xsl:attribute name="count">
-                <xsl:value-of select="count(/server/responses/Session.getAllDocumentsRs/_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow)"></xsl:value-of>
+                <xsl:value-of select="count(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow)"></xsl:value-of>
             </xsl:attribute>
         </Session.validatedAddress>
     </xsl:template>
