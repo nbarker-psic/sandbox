@@ -3,7 +3,7 @@
     <xsl:output omit-xml-declaration="yes"/>
 
     <xsl:template match="/">
-        <Session.validatedAddress>
+        <validatedAddress>
             <xsl:attribute name="count">
                 <xsl:value-of select="count(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow)"></xsl:value-of>
             </xsl:attribute>
@@ -25,7 +25,7 @@
             <County>
                 <xsl:value-of select="//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/County"></xsl:value-of>
             </County>
-        </Session.validatedAddress>
+        </validatedAddress>
     </xsl:template>
 
 </xsl:stylesheet>
