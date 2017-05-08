@@ -25,6 +25,9 @@
             <County>
                 <xsl:value-of select="//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/County"></xsl:value-of>
             </County>
+            <ValidateCounty>
+                <xsl:value-of select="replace(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/County, ' County', '')"></xsl:value-of>
+            </ValidateCounty>
         </validatedAddress>
     </xsl:template>
 
