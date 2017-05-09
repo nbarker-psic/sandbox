@@ -22,7 +22,7 @@
                     <xsl:if test="not(boolean(//_psicPortalIntegration/validatedAddress/Confidence[.=100]))">
                         <error>
                             <xsl:attribute name="type">integration</xsl:attribute>
-                            <xsl:text>The supplied mailing address is not valid</xsl:text>
+                            <xsl:text>The supplied mailing address is not valid.  Please request assistance from customer service.</xsl:text>
                         </error>
                     </xsl:if>
                 </xsl:if>
