@@ -19,6 +19,12 @@
                 <!-- integration errors -->
                 <xsl:if test="boolean(//_psicPortalIntegration/integrations/vDoIntegrationAddress[.=1])">
                     <!-- integration: address -->
+                    <xsl:if test="boolean(//_psicPortalIntegration/validatedAddress)">
+                        <error>
+                            <xsl:attribute name="type">integration</xsl:attribute>
+                            <xsl:text>The provided address could not be validated</xsl:text>
+                        </error>
+                    </xsl:if>
                 </xsl:if>
                 <xsl:if test="boolean(//_psicPortalIntegration/integrations/vDoIntegrationCreditScore[.=1])">
                     <!-- integration: creditscore -->
