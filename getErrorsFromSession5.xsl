@@ -37,7 +37,7 @@
                         <xsl:if test="not(boolean(./VinData/vinResponse/VinLookup.getVinLookupIndividualRs/VehicleData))">
                             <error>
                                 <xsl:attribute name="type">integration</xsl:attribute>
-                                <xsl:value-of select="concat('Vehicle data not returned for VIN: ', ./VIN)"></xsl:value-of>
+                                <xsl:value-of select="concat('Vehicle data could not be retrieved based on the VIN that was provided.  Please request assistance from customer service.')"></xsl:value-of>
                             </error>
                         </xsl:if>
                     </xsl:for-each>
@@ -49,7 +49,7 @@
                         <xsl:if test="not(boolean(./GetMotorVehicleReportResponseMessageType/MessageHeader/StatusMessage[.='SUCCESS']))">
                             <error>
                                 <xsl:attribute name="type">integration</xsl:attribute>
-                                <xsl:value-of select="concat('MVR data not returned for driver: ', ./GetMotorVehicleReportResponseMessageType/GetMotorVehicleReportRequest/DriverInformation/FirstName, ' ', ./GetMotorVehicleReportResponseMessageType/GetMotorVehicleReportRequest/DriverInformation/LastName)"></xsl:value-of>
+                                <xsl:value-of select="concat('Motor vehicle record data could not be retrieved.  Please request assitance from customer service.')"></xsl:value-of>
                             </error>
                         </xsl:if>
                     </xsl:for-each>
