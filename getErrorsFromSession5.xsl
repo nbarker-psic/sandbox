@@ -22,7 +22,7 @@
                     <xsl:if test="not(boolean(//_psicPortalIntegration/validatedAddress/Confidence[.=100]))">
                         <error>
                             <xsl:attribute name="type">integration</xsl:attribute>
-                            <xsl:text>The provided address could not be validated</xsl:text>
+                            <xsl:text>The supplied mailing address is not valid</xsl:text>
                         </error>
                     </xsl:if>
                 </xsl:if>
@@ -49,7 +49,7 @@
                         <xsl:if test="not(boolean(./GetMotorVehicleReportResponseMessageType/MessageHeader/StatusMessage[.='SUCCESS']))">
                             <error>
                                 <xsl:attribute name="type">integration</xsl:attribute>
-                                <xsl:value-of select="concat('Motor vehicle record data could not be retrieved.  Please request assitance from customer service.')"></xsl:value-of>
+                                <xsl:value-of select="concat('Driver history data could not be retrieved.  Please request assitance from customer service.')"></xsl:value-of>
                             </error>
                         </xsl:if>
                     </xsl:for-each>
