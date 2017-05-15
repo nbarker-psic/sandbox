@@ -4,7 +4,7 @@
 
     <xsl:template match="/">
         <xsl:choose>
-            <xsl:when test="boolean(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]) and boolean(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/Confidence[.=100])">
+            <xsl:when test="boolean(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]) and boolean(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/Confidence[.>=70])">
                 <validatedAddress>
                     <Confidence>
                         <xsl:value-of select="//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/Confidence"></xsl:value-of>
@@ -27,9 +27,9 @@
                     <County>
                         <xsl:value-of select="//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/County"></xsl:value-of>
                     </County>
-        <!--             <ValidateCounty>
-                        <xsl:value-of select="replace(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/County, ' County', '')"></xsl:value-of>
-                    </ValidateCounty> -->
+                    <!--             <ValidateCounty>
+                                    <xsl:value-of select="replace(//_IntegrationData/geocodeResponse/ArrayOfAddressRow/AddressRow[1]/County, ' County', '')"></xsl:value-of>
+                                </ValidateCounty> -->
                 </validatedAddress>
             </xsl:when>
             <xsl:otherwise>
