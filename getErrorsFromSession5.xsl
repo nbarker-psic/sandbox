@@ -19,7 +19,7 @@
                 <!-- integration errors -->
                 <xsl:if test="boolean(//_psicPortalIntegration/integrations/vDoIntegrationAddress[.=1])">
                     <!-- integration: address -->
-                    <xsl:if test="not(boolean(//_psicPortalIntegration/validatedAddress/Confidence[.=100]))">
+                    <xsl:if test="not(boolean(//_psicPortalIntegration/validatedAddress/Confidence[.>=70]))">
                         <error>
                             <xsl:attribute name="type">integration</xsl:attribute>
                             <xsl:text>The supplied mailing address is not valid.  Please request assistance from customer service.</xsl:text>
